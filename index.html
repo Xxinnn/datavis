@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script>
+            var data=[]
+            d3.csv("imageID.csv", function(data) {
+                return {
+                    id : +d.ID,
+                    artworkName : d.artworkName,
+                    artistName : d.artistName,
+                    time : d.time,
+                    description : d.description,
+                    size_in : d.size_in,
+                    size_in : d.size_cm
+                };
+            }, function(data) {
+              console.log(data[0]);
+            });
+        </script>
+    </head>
+    
+    <body>
+        <P>ABUIDSA</P>
+    </body>
+</html>
