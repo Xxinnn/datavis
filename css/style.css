@@ -1,0 +1,53 @@
+/*post-impressionism page*/
+html {
+    color: white;
+}
+body {
+    background-color: #9B686B;
+}
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 6em;
+    font-weight: 600;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6em;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12,50px);
+    grid-column-gap: 70px;
+}
+
+.nav {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    width:100%;
+    text-align:center;
+    height: 100px;
+}
+
+#overview {
+    float: left;
+/*    width: 300px;*/
+}
+
+#main_nav {
+    display: inline-block;
+    margin:0 auto;
+    
+}
+
+#gallery_mode {
+    float: right;
+/*    width: 300px;*/
+}
+
+.movement {
+    display: relative;
+    grid-column-start: 3;
+    grid-column-end: 12;
+    top: 455px;
+}
