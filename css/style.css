@@ -8,22 +8,35 @@ body {
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 6em;
+    font-weight: 700;
+}
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+}
+h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.6em;
     font-weight: 600;
 }
-
 p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.6em;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.5;
 }
 .wrapper {
     display: grid;
     grid-template-columns: repeat(12,50px);
     grid-column-gap: 70px;
+    grid-template-rows: repeat(15,50px);
 }
 
 .nav {
-    grid-column-start: 1;
-    grid-column-end: 13;
+    margin-top: 20px;
+    grid-column: 1 / 13;
+    grid-row: 1 / 3;
     width:100%;
     text-align:center;
     height: 100px;
@@ -36,7 +49,7 @@ p {
 
 #main_nav {
     display: inline-block;
-    margin:0 auto;
+    margin: 0 auto;
     
 }
 
@@ -45,9 +58,80 @@ p {
 /*    width: 300px;*/
 }
 
+#gallery {
+    grid-column: 3 / 11;
+    grid-row: 3 / 10;
+}
+.row1.row2.row3 {
+    width: 840px;
+}
+.row1 img{
+    display: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: auto;
+}
+.row2 img{
+    display: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: auto;
+}
+.row3 img{
+    display: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: auto;
+}
+
+.timeline {
+    grid-column: 1 / 13;
+    grid-row: 12 / 13;
+}
+.time {
+    grid-column: 2 / 12;
+    grid-row: 13 / 15;
+    width: 100%;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+.from {
+    float: left;
+}
+.end {
+    float: right;
+}
+.flag {
+    clear: both;
+    margin-top: 23px;
+    float: left;
+}
 .movement {
     display: relative;
-    grid-column-start: 3;
-    grid-column-end: 12;
-    top: 455px;
+    grid-column: 3 / 12;
+    grid-row: 10 / 16;
 }
+.movement_key {
+    margin-top: 55px;
+    font-weight: 500;
+}
+.movement_desc {
+    width: 900px;
+    margin-top: 20px;
+}
+
+/*
+@media (min-width: 870px) {
+    .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column-gap: 10%;
+    grid-template-rows: repeat(15,50px);
+}
+    
+}*/
