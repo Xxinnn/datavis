@@ -9,15 +9,20 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700,900' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,500" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300,600,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+        
+        <script src="https://d3js.org/d3.v4.js"></script>
 
-        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+<!--        <script src="https://d3js.org/d3.v5.min.js"></script>-->
 <!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
     </head>
     
     <body>
+       
         <div class="wrapper">
+        
 <!--==============================================================-->
 <!-- navbar -->
 <!--==============================================================-->
@@ -38,7 +43,9 @@
 <!-- gallery -->
 <!--==============================================================-->
            <div class="gallery" id="gallery">
-               <div class="row1"></div>
+               <div class="row1">
+                
+               </div>
                <div class="row2"></div>
                <div class="row3"></div>
                
@@ -63,9 +70,42 @@
                 </p>
                 <p class="movement_desc">Post-Impressionism (also spelled Postimpressionism) is a predominantly French art movement. It emerged as a reaction against Impressionists' concern for the naturalistic depiction of light and color. </p>
             </div>
+            <div id="layer"></div>
+<!--==============================================================-->
+<!-- detail page -->
+<!--==============================================================-->
+            <div id="detail">
+                
+                <div id="detail_img">
+<!--                    use as a test-->
+<!--                    <img src="img/postImpressionism/304.jpg">-->
+                </div>
+                
+                <div id="caption">
+                   <div id="close">
+                    &times;
+                   </div>
+                    <div id="name">
+<!--                        <span>Bedroom in Arles</span>-->
+                    </div>
+                    <div id="artist">
+<!--                        <span>Vincent van Gogh, 1988</span>-->
+                    </div>
+                    <div id="description"> 
+<!--                    <span>The painting depicts van Gogh's bedroom at 2, Place Lamartine in Arles, Bouches-du-Rhône, France, known as the Yellow House. The door to the right opened on to the upper floor and the staircase; the door to the left was that of the guest room he held prepared for Gauguin; the window in the front wall looked on to Place Lamartine and its public gardens. This room was not rectangular but trapezoid with an obtuse angle in the left hand corner of the front wall and an acute angle at the right. </span>-->
+                    </div>
+                    <div id="size">
+<!--                        <span>Dimension: 90 x 78 cm</span>-->
+                    </div>
+                </div>
+            </div>
+            
         </div>
+
+    
     </body>
     <script src="js/jquery.js"></script>
+    <script src="js/d3.js"></script>
     <script src="js/importImg.js"></script>
-<!--    <script src="js/d3.js"></script>-->
+       
 </html>
