@@ -1,0 +1,248 @@
+/*post-impressionism page*/
+html {
+    color: white;
+}
+body {
+    background-color: #9B686B;
+}
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 6em;
+    font-weight: 700;
+}
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+}
+h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12,50px);
+    grid-column-gap: 70px;
+    grid-template-rows: repeat(15,50px);
+}
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+/************************************************/
+/* header */
+/************************************************/
+.nav {
+    margin-top: 20px;
+    grid-column: 1 / 13;
+    grid-row: 1 / 3;
+    width:100%;
+    text-align:center;
+    height: 100px;
+}
+
+#overview {
+    float: left;
+/*    width: 300px;*/
+}
+
+#main_nav {
+    display: inline-block;
+    margin: 0 auto;
+    
+}
+
+#gallery_mode {
+    float: right;
+/*    width: 300px;*/
+}
+
+/************************************************/
+/* gallery */
+/************************************************/
+#gallery {
+    grid-column: 3 / 11;
+    grid-row: 3 / 10;
+}
+.row1.row2.row3 {
+    width: 840px;
+}
+.row1 img{
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: auto;
+}
+.row1 img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 18px;
+    cursor: pointer;
+}
+.row2 img{
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: auto;
+}
+.row2 img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 18px;
+    cursor: pointer;
+}
+.row3 img{
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: auto;
+}
+.row3 img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+/************************************************/
+/* introduction */
+/************************************************/
+.timeline {
+    grid-column: 1 / 13;
+    grid-row: 12 / 13;
+}
+.time {
+    grid-column: 2 / 12;
+    grid-row: 13 / 15;
+    width: 100%;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+.from {
+    float: left;
+}
+.end {
+    float: right;
+}
+.flag {
+    clear: both;
+    margin-top: 23px;
+    float: left;
+}
+.movement {
+    display: relative;
+    grid-column: 3 / 12;
+    grid-row: 10 / 16;
+}
+.movement_key {
+    margin-top: 55px;
+    font-weight: 500;
+}
+.movement_desc {
+    width: 900px;
+    margin-top: 20px;
+}
+
+/*
+@media (min-width: 870px) {
+    .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column-gap: 10%;
+    grid-template-rows: repeat(15,50px);
+}
+    
+}*/
+
+#layer {
+    display: none;
+    z-index: 3;
+    background-color: rgba(216, 216, 216, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************/
+/* detail page */
+/************************************************/
+#detail {
+/*    display: none;*/
+/*    z-index: 999;*/
+/*    z-index: 99;*/
+    display: none;
+    z-index: 99;
+    grid-column: 2 / 12;
+    grid-row: 3 / 17;
+    background-color: #f2f2f2;
+    width: 1127px;
+    height: 680px;
+    box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 20px;
+}
+
+
+#detail_img img{
+    position: absolute;
+    height: 680px;
+    width: auto;
+}
+
+#caption {
+    padding: 20px;
+    color: #4A4A4A;
+    background-color: #f2f2f2;
+    position: relative;
+    float: right;
+    width: 225px;
+    height: 640px;
+/*    margin-right: 20px;*/
+    z-index: 999;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#close {
+    color: #9B9B9B;
+    font-size: 35px;
+    float: right;
+    height: 32px;
+    cursor: pointer;
+}
+#name {
+    clear:both;
+    height: 85px;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+#artist {
+    font-size: 1.1em;
+    height: 40px;
+}
+#description {
+    font-size: 1em;
+    height: 460px;
+    line-height: 1.2;
+}
+
+.tooltip {
+    display:none;
+    background:transparent url(/media/img/tooltip/black_arrow.png);
+    font-size:12px;
+    height:70px;
+    width:160px;
+    padding:25px;
+    color:#eee;
+  }
+
