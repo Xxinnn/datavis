@@ -103,9 +103,11 @@ $(document).keydown(function(e){
         i++;
     }     
     
-    
+    var hoverId;
     var td;
     var t_id;
+    var callImage = document.createElement('img');
+
     var detail_img=document.querySelector('#detail_img');
     
     for (var t = 1; t < 21; t++){
@@ -113,33 +115,40 @@ $(document).keydown(function(e){
         td = document.getElementById(300+t);
         
         //hover tooltip
-         $(td).mouseover(function(event) {
-            createTooltip(event);               
-         }).mouseout(function(){
-    // create a hidefunction on the callback if you want
-            hideTooltip(); 
-         });
-
-        function createTooltip(event){          
-            $('<div class="tooltip">test</div>').appendTo('body');
-            positionTooltip(event);        
-        }
         
-        function hideTooltip(event){
-            $('<div class="tooltip">test</div>').remove();
-        }
-
-        function positionTooltip(event){
-            var tPosX = event.pageX - 10;
-            var tPosY = event.pageY - 100;
-            $('div.tooltip').css({'position': 'absolute', 'top': tPosY + 'px', 'left': tPosX+'px'});
-        }
+        
+        $("td").mouseover(function(event) {
+            hoverId=event.target.id;
+            callImage.setAttribute('title',csv_artworkName[hoverId-281]);
+            $("img[title]").tooltip();
+        });
+//         $(td).mouseover(function(event) {
+//            createTooltip(event);               
+//         }).mouseout(function(){
+//    // create a hidefunction on the callback if you want
+//            hideTooltip(); 
+//         });
+//
+//        function createTooltip(event){          
+//            $('<div class="tooltip">test</div>').appendTo('body');
+//            positionTooltip(event);        
+//        }
+//        
+//        function hideTooltip(event){
+//            $('<div class="tooltip">test</div>').remove();
+//        }
+//
+//        function positionTooltip(event){
+//            var tPosX = event.pageX - 10;
+//            var tPosY = event.pageY - 100;
+//            $('div.tooltip').css({'position': 'absolute', 'top': tPosY + 'px', 'left': tPosX+'px'});
+//        }
 
         
         //open and close detail window
          $(td).click(function(event) {             
 //             add layer
-             var callImage = document.createElement('img');
+//             var callImage = document.createElement('img');
              $("#layer").fadeIn(300);
              $("#detail").css("display", "block");
              
