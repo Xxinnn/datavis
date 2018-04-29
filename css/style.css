@@ -125,7 +125,7 @@ p {
     grid-row: 10 / 16;
 }
 .movement_key {
-    margin-top: 5%;
+    margin-top: 35px;
     font-weight: 500;
 }
 .movement_desc {
@@ -194,7 +194,7 @@ p {
     width: 1127px;
     height: 670px;
     box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-/*    margin-top: 20px;*/
+    margin-top: 20px;
 }
 
 #detail_img {
@@ -243,6 +243,51 @@ p {
     line-height: 1.2;
 }
 
+.ui-tooltip, .arrow:after {
+    background: white;
+    border: 2px solid white;
+  }
+  .ui-tooltip {
+    padding: 10px 10px;
+    color: white;
+      font-size: 0.8em;
+    border-radius: 30px;
+    box-shadow: 0 0 7px black;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
+
+/*
 .tooltip {
     display:none;
     background:transparent url(/media/img/tooltip/black_arrow.png);
@@ -252,20 +297,22 @@ p {
     padding:25px;
     color:#eee;
   }
-@media (min-width: 1400px) {
+*/
+/**/
+@media (min-width: 1500px) {
     p {
         font-size: 1.8em;
     }
     .row1 img{
-    height: 160px;
+    height: 150px;
     width: auto;
 }
     .row2 img{
-    height: 160px;
+    height: 150px;
     width: auto;
 }
     .row3 img{
-    height: 160px;
+    height: 150px;
     width: auto;
 }
     
@@ -287,7 +334,7 @@ p {
 }
     #detail_img {
     position: absolute;
-/*    width: 850px;*/
+    width: 1150px;
 }
     #detail_img img{
     display: block;
@@ -299,7 +346,7 @@ p {
 #caption {
     padding: 20px;
     position: relative;
-    width: 325px;
+    width: 375px;
     height: 876px;
 }
 #close {
