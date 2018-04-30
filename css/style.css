@@ -2,9 +2,30 @@
 html {
     color: white;
 }
+
+html {
+    animation: fadeSiteIn 0.5s ease forwards; /* [1] */
+}
+
+html.fadeSiteOut {
+  animation:  fadeSiteOut 0.5s ease forwards; /* [2] */
+}
+
+
+@keyframes fadeSiteIn { /* [1] */
+    from   { opacity: 0; }
+    to    { opacity: 1; }
+}
+
+@keyframes fadeSiteOut { /* [2] */
+    from   { opacity: 1; }
+    to     { opacity: 0; }
+}
+/*
 body {
     background-color: #9B686B;
 }
+*/
 
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
@@ -70,6 +91,23 @@ p {
 /*    width: 300px;*/
 }
 
+.go_on{
+    text-decoration: none;
+    color: white;
+}
+.go_back {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    opacity: 1;
+    transition: 5s opacity;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
 /************************************************/
 /* gallery */
 /************************************************/
@@ -129,7 +167,7 @@ p {
     font-weight: 500;
 }
 .movement_desc {
-    width: 80%;
+    width: 90%;
     margin-top: 20px;
 }
 .timeline {

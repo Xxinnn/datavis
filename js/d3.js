@@ -14,9 +14,9 @@ function read_csv() {
                 csv_id.push(+d.ID);
                 csv_artworkName.push(d.artworkName);
                 csv_artistName.push(d.artistName);
-                csv_time.push(d.time);
-                csv_description.push(d.description);
-                csv_size_cm.push(d.size_cm);
+                csv_time.push(d.Time);
+                csv_description.push(d.Description);
+                csv_size_cm.push(d.Size_cm);
             })
             //called after the AJAX is success
 //            console.log("id",id);
