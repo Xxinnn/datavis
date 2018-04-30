@@ -21,11 +21,7 @@ html.fadeSiteOut {
     from   { opacity: 1; }
     to     { opacity: 0; }
 }
-/*
-body {
-    background-color: #9B686B;
-}
-*/
+
 
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
@@ -77,17 +73,72 @@ p {
 
 #overview {
     float: left;
+    padding: 10px;
 /*    width: 300px;*/
 }
 
 #main_nav {
     display: inline-block;
+    position: relative;
     margin: 0 auto;
-    
+    width: 478px;
+    height: 50px;
+}
+#main_nav a{
+    text-decoration: none;
+}
+
+.futurism {
+    position: relative;
+    left: 257px;
+}
+.futurism:hover{
+    opacity: 0.6;
+}
+.dadaism {
+    position: relative;
+    left: 267px;
+}
+
+.impressionism {
+    position: relative;
+    top: 15px;
+    left: -80px;  
+}
+.post {
+    position: relative;
+    top: 15px;
+    left: -70px;
+}
+.cubism {
+    position: relative;
+    top: 15px;
+    left: -60px;
+}
+.construct {
+    position: relative;
+    top: 15px;
+    left: -35px;
+}
+.fauvism {
+    position: relative;
+    top: 30px;
+    left: -215px;
+}
+.expressionism {
+    position: relative;
+    top: 15px;
+    left: 120px;
+}
+.surrealism{
+    position: relative;
+    top: 30px;
+    left: 90px;
 }
 
 #gallery_mode {
     float: right;
+    padding: 10px;
 /*    width: 300px;*/
 }
 
@@ -108,6 +159,8 @@ body.fade-out {
     opacity: 0;
     transition: none;
 }
+
+
 /************************************************/
 /* gallery */
 /************************************************/
