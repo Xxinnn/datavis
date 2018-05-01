@@ -7,7 +7,7 @@ var row2 = document.querySelector('.row2');
 var row3 = document.querySelector('.row3');
 
 
-//var urls = ["301", "302", "303", "304", "305", "306", "307", "308", "309", "310", "311", "312", "313", "314", "315", "316", "317", "318", "319", "320"];
+
 var urls1 = ["401", "404", "407", "410", "413", "413", "416", "420"];
 var urls2 = ["402", "405", "408", "411", "414", "414", "417"];
 var urls3 = ["403", "406", "409", "412", "415", "418", "419"];
@@ -21,22 +21,16 @@ var i=0;
 //the first and second row has to show two images at the same time when keydown once so consider urls1[3] and urls2[3]
 
 $(document).ready(function() {
-//    var link = $(this).attr("href"); 
-//
-//    if ( link.match("^#") ) { 
-//
-//        $(this).click(function() {
-//            var target = $(link); 
-//            target = target.length ? target : $('[name=' + this.hash.slice(1) +']'); /* [4] */ 
-//            if (target.length) {
-//                $('html,body').animate({ /* [5] */ 
-//                    scrollTop: target.offset().top - 70 /* [5] */ 
-//                }, 2000); return false; /* [5] */ 
-//            }
-//        })
-//        };
-
+//    
+$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
+    $(".girl").css("-webkit-animation-iteration-count", "infinite");
+//    $(".girl-wrap").addClass("paused");
+//    $(".girl").css("-webkit-animation-iteration-count", "0");
+    $(".girl").animate({
+                left:"+=120px"  
+            },1000);
+    
     if(e.keyCode==39 && i == 4) {
 //        import img
         var newImage1 = document.createElement('img');
@@ -103,6 +97,7 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
+        $(".girl-wrap").removeClass("paused");
     }
     
     else if (e.keyCode==39 && i == 7) {

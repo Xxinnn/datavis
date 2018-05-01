@@ -17,24 +17,16 @@ var i=0;
 //have to hard code for each page
 
 $(document).ready(function() {
-    //page transition
-//    var link = $(this).attr("href"); 
-//
-//    if ( link.match("^#") ) { 
-//
-//        $(this).click(function() {
-//            var target = $(link); 
-//            target = target.length ? target : $('[name=' + this.hash.slice(1) +']'); /* [4] */ 
-//            if (target.length) {
-//                $('html,body').animate({ /* [5] */ 
-//                    scrollTop: target.offset().top - 70 /* [5] */ 
-//                }, 2000); return false; /* [5] */ 
-//            }
-//        });
-//    }
-//    
-
+    
+    $(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
+    $(".girl").css("-webkit-animation-iteration-count", "infinite");
+//    $(".girl-wrap").addClass("paused");
+//    $(".girl").css("-webkit-animation-iteration-count", "0");
+    $(".girl").animate({
+                left:"+=120px"  
+            },1000);
+    
     if(e.keyCode==39 && i == 6) {
 //        import img
         var newImage1 = document.createElement('img');
@@ -67,6 +59,9 @@ $(document).keydown(function(e){
         newImage1.setAttribute('id',urls1[i]);
         newImage1.setAttribute('title',csv_artworkName[urls1[i]-201]);
         console.log(newImage1);
+//        var img1=$(newImage1);
+//        var position1=img1.position();
+//        console.log(position1.left);
 
     
         newImage2.setAttribute('src', 'img/impressionism/' + urls2[i] + '.jpg');
@@ -86,6 +81,8 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
+        $(".girl-wrap").removeClass("paused");
+        
     }     
     
     var hoverId;

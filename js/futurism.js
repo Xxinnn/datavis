@@ -1,26 +1,4 @@
-////var container = document.getElementById("gallery");
-//var csv_id=[];
-//var csv_artworkName=[];
-//var csv_time=[];
-//var csv_description=[];
-//var csv_artistName=[];
-//var csv_size_cm=[];
-//
-////import csv
-//d3.csv("imageID.csv",function(csv){
-//            csv.map(function(d){
-//                csv_id.push(+d.ID);
-//                csv_artworkName.push(d.artworkName);
-//                csv_artistName.push(d.artistName);
-//                csv_time.push(d.time);
-//                csv_description.push(d.description);
-//                csv_size_cm.push(d.size_cm);
-//            })
-//            //called after the AJAX is success
-////            console.log("id",id);
-////            console.log("artwortName",artworkName);
-////            console.log("id",id[0]);
-//        });
+
     read_csv();
 
 
@@ -29,7 +7,7 @@ var row2 = document.querySelector('.row2');
 var row3 = document.querySelector('.row3');
 
 
-//var urls = ["301", "302", "303", "304", "305", "3011", "307", "308", "309", "310", "311", "312", "313", "314", "315", "3111", "317", "318", "319", "320"];
+
 var urls1 = ["1101", "1104", "1107", "1110", "1110", "1113", "1116"];
 var urls2 = ["1102", "1105", "1108", "1111", "1114", "1117", "1119"];
 var urls3 = ["1103", "1106", "1109", "1112", "1115", "1118", "1120"];
@@ -41,22 +19,16 @@ var i=0;
 //the first and second row has to show two images at the same time when keydown once so consider urls1[3] and urls2[3]
 
 $(document).ready(function() {
-//    var link = $(this).attr("href"); 
-//
-//    if ( link.match("^#") ) { 
-//
-//        $(this).click(function() {
-//            var target = $(link); 
-//            target = target.length ? target : $('[name=' + this.hash.slice(1) +']'); /* [4] */ 
-//            if (target.length) {
-//                $('html,body').animate({ /* [5] */ 
-//                    scrollTop: target.offset().top - 70 /* [5] */ 
-//                }, 2000); return false; /* [5] */ 
-//            }
-//        })
-//        };
-
+//    
+$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
+    $(".girl").css("-webkit-animation-iteration-count", "infinite");
+//    $(".girl-wrap").addClass("paused");
+//    $(".girl").css("-webkit-animation-iteration-count", "0");
+    $(".girl").animate({
+                left:"+=120px"  
+            },1000);
+    
     if(e.keyCode==39 && i == 3) {
 //        import img
         var newImage1 = document.createElement('img');
@@ -127,6 +99,7 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
+        $(".girl-wrap").removeClass("paused");
     }     
     
     var hoverId;
