@@ -23,7 +23,7 @@ video#bgvid{
 }
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 5.8em;
+    font-size: 6em;
     font-weight: bold;
 }
 
@@ -141,7 +141,7 @@ p {
 /************************************************/
 .movement {
     grid-column: 3 / 12;
-    /* margin-right: 10%;
+    margin-right: 10%;
     grid-row: 5 / 16;
     text-align: center
 
