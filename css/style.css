@@ -526,7 +526,7 @@ body.fade-out {
   top: calc(50% - 132.5px);
   left: calc(50% - 265px);
   display: none;
-    color:black;
+  color:black;
 
 }
 
@@ -545,10 +545,10 @@ body.fade-out {
 }
 
 .front {
-  background-image: -webkit-radial-gradient(circle, #e2f0cb, #9bd151);
-  background-image: -moz-radial-gradient(circle, #e2f0cb, #9bd151);
-  background-image: -ms-radial-gradient(circle, #e2f0cb, #9bd151);
-  background-image: radial-gradient(circle, #e2f0cb, #9bd151);
+  background-image: -webkit-radial-gradient(circle, #B8646E, #BA8D8E);
+  background-image: -moz-radial-gradient(circle, #B8646E, #BA8D8E);
+  background-image: -ms-radial-gradient(circle, #B8646E, #BA8D8E);
+  background-image: radial-gradient(circle, #B8646E, #BA8D8E);
   width: 265px;
   text-align: center;
   padding-top: 5px;
