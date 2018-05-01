@@ -270,6 +270,36 @@ body.fade-out {
     height: 100%;
 }
 
+.girl{
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    width: 120px;
+    height: 150px;
+    background: url(../img/girl.png) 0 0 no-repeat;
+    -webkit-animation-name: charector-1;
+    -webkit-animation-iteration-count: 0;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-duration: 1000ms;
+}
+
+@-webkit-keyframes charector-1{
+    0% {background-position: 0 0;}
+    10% {background-position: -150px 0;}
+    20% {background-position: -300px 0;}
+    30% {background-position: -450px 0;}
+    40% {background-position: -600px 0;}
+    50% {background-position: -750px 0;}
+    60% {background-position: -900px 0;}
+    70% {background-position: -1050px 0;}
+    80% {background-position: -1200px 0;}
+    90% {background-position: -1350px 0;}
+    100% {background-position: 0 0;}
+}
+.paused .girl{
+    -webkit-animation-play-state:paused;
+}
+
 /************************************************/
 /* detail page */
 /************************************************/
@@ -395,24 +425,24 @@ body.fade-out {
         font-size: 1.8em;
     }
     .row1 img{
-    height: 150px;
+    height: 140px;
     width: auto;
-}
+    }
     .row2 img{
-    height: 150px;
+    height: 140px;
     width: auto;
-}
+    }
     .row3 img{
-    height: 150px;
+    height: 140px;
     width: auto;
-}
+    }
     
     .movement_key {
     margin-top: 80px;
-}
-.movement_desc {
-    width: 80%;
-}
+    }
+    .movement_desc {
+        width: 80%;
+    }
     #detail {
 /*    display: none;*/
 /*    z-index: 999;*/
@@ -434,23 +464,48 @@ body.fade-out {
     width: auto;
 }
 
-#caption {
-    padding: 20px;
-    position: relative;
-    width: 375px;
-    height: 876px;
-}
-#close {
-    height: 32px;
-}
-#name {
-    clear:both;
-    height: 85px;
-}
-#artist {
-    height: 40px;
-}
-#description {
-    height: 680px;
-}
+    #caption {
+        padding: 20px;
+        position: relative;
+        width: 375px;
+        height: 876px;
+    }
+    #close {
+        height: 32px;
+    }
+    #name {
+        clear:both;
+        height: 85px;
+    }
+    #artist {
+        height: 40px;
+    }
+    #description {
+        height: 680px;
+    }
+    .girl{
+        position: absolute;
+        top: 650px;
+        left: 250px;
+        width: 120px;
+        height: 150px;
+        background: url(../img/girl.png) 0 0 no-repeat;
+        -webkit-animation-name: charector-1;
+        -webkit-animation-iteration-count: 0;
+        -webkit-animation-timing-function: step-start;
+        -webkit-animation-duration: 1000ms;
+    }
+    @-webkit-keyframes charector-1{
+        0% {background-position: 0 0;}
+        10% {background-position: -150px 0;}
+        20% {background-position: -300px 0;}
+        30% {background-position: -450px 0;}
+        40% {background-position: -600px 0;}
+        50% {background-position: -750px 0;}
+        60% {background-position: -900px 0;}
+        70% {background-position: -1050px 0;}
+        80% {background-position: -1200px 0;}
+        90% {background-position: -1350px 0;}
+        100% {background-position: 0 0;}
+    }
 }
