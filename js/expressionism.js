@@ -20,14 +20,7 @@ var i=0;
 
 $(document).ready(function() {
 //    
-$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
-    $(".girl").css("-webkit-animation-iteration-count", "infinite");
-//    $(".girl-wrap").addClass("paused");
-//    $(".girl").css("-webkit-animation-iteration-count", "0");
-    $(".girl").animate({
-                left:"+=120px"  
-            },1000);
     
     if(e.keyCode==39 && i == 1) {
 //        import img
@@ -65,6 +58,10 @@ $(document).keydown(function(e){
         row3.append(newImage3);
     
         i=i+2;
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }
     
     else if (e.keyCode==39 && i < urls2.length){
@@ -91,7 +88,12 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
-        $(".girl-wrap").removeClass("paused");
+        
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }     
     else if (e.keyCode==39 && i == 7) {
         var newImage1 = document.createElement('img');
@@ -101,6 +103,13 @@ $(document).keydown(function(e){
         newImage1.setAttribute('title',csv_artworkName[urls1[i]-501]);
         row1.append(newImage1);
         i++;
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
+    }
+    else if (e.keyCode==39 && i == 8){
+        window.open("dadaism.html","_self");
     }
     
     var hoverId;
@@ -112,44 +121,37 @@ $(document).keydown(function(e){
         
         td = document.getElementById(600+t);
         
-        //hover tooltip
-        
-        
+//        hover tooltip
         $(td).mouseover(function(event) {
             hoverId=event.target.id;
 //           console.log(hoverId);
-//            callImage.setAttribute('title',csv_artworkName[hoverId-501]);
             console.log(callImage);
             $("img[title]").tooltip( {
-      position: {
-        my: "center bottom-20",
-        at: "center top",
-        using: function( position, feedback ) {
-          $( this ).css( position );
-          $( "<div>" )
-            .addClass( "arrow" )
-            .addClass( feedback.vertical )
-            .addClass( feedback.horizontal )
-            .appendTo( this );
-        }
-      }
-    }
-            );
+              position: {
+                my: "center bottom-20",
+                at: "center top",
+                using: function( position, feedback ) {
+                  $( this ).css( position );
+                  $( "<div>" )
+                    .addClass( "arrow" )
+                    .addClass( feedback.vertical )
+                    .addClass( feedback.horizontal )
+                    .appendTo( this );
+                }
+              }
+            });
         });
-
-
+        
         
         //open and close detail window
          $(td).click(function(event) {             
 //             add layer
-//             var callImage = document.createElement('img');
              $("#layer").fadeIn(300);
              $("#detail").css("display", "block");
              
              t_id=event.target.id;
             callImage.setAttribute('src','img/expressionism/' + t_id + '.jpg');
              $('#detail_img').html(callImage);
-//             detail_img.append(callImage);
                 
              //add caption
              $('#name').html( '<span>' + csv_artworkName[t_id-501]+'</span>');

@@ -18,14 +18,9 @@ var i=0;
 
 $(document).ready(function() {
     
-    $(".girl-wrap").addClass("paused");
+    
 $(document).keydown(function(e){
-    $(".girl").css("-webkit-animation-iteration-count", "infinite");
-//    $(".girl-wrap").addClass("paused");
-//    $(".girl").css("-webkit-animation-iteration-count", "0");
-    $(".girl").animate({
-                left:"+=120px"  
-            },1000);
+    
     
     if(e.keyCode==39 && i == 6) {
 //        import img
@@ -47,7 +42,13 @@ $(document).keydown(function(e){
         row1.append(newImage1);
         row3.append(newImage3);
         i++;
-    
+        
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
+     i=i+2;
     }
     
     else if (e.keyCode==39 && i < 6){
@@ -81,9 +82,24 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
-        $(".girl-wrap").removeClass("paused");
-        
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);        
     }     
+    else if (e.keyCode==39&&i == 8) {
+             $(".girl").animate({
+                left:"+=120px"  
+            },1000); 
+        i++;
+    }
+    
+    else if  (e.keyCode==39&&i==9) {
+        window.open("postImpressionism.html","_self");
+
+        
+    }
     
     var hoverId;
     var td;

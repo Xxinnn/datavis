@@ -20,14 +20,8 @@ var i=0;
 
 $(document).ready(function() {
 //    
-$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
-    $(".girl").css("-webkit-animation-iteration-count", "infinite");
-//    $(".girl-wrap").addClass("paused");
-//    $(".girl").css("-webkit-animation-iteration-count", "0");
-    $(".girl").animate({
-                left:"+=120px"  
-            },1000);
+    
     
     if(e.keyCode==39 && i == 3) {
 //        import img
@@ -41,7 +35,6 @@ $(document).keydown(function(e){
         newImage1.setAttribute('src', 'img/futurism/' + urls1[i] + '.jpg');
         newImage1.setAttribute('id',urls1[i]);
         newImage1.setAttribute('title',csv_artworkName[urls1[i]-1021]);
-
 
     
         newImage2.setAttribute('src', 'img/futurism/' + urls2[i] + '.jpg');
@@ -73,6 +66,10 @@ $(document).keydown(function(e){
         row3.append(newImage3);
     
         i=i+2;
+        
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }
     
     else if (e.keyCode==39 && i < urls1.length){
@@ -99,9 +96,18 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
-        $(".girl-wrap").removeClass("paused");
+        
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }     
+    else if (e.keyCode==39 && i == urls1.length){
+        window.open("expressionism.html","_self");
+    }
     
+
     var hoverId;
     var td;
     var t_id;
@@ -112,28 +118,24 @@ $(document).keydown(function(e){
         td = document.getElementById(1100+t);
         
         //hover tooltip
-        
-        
         $(td).mouseover(function(event) {
             hoverId=event.target.id;
 //           console.log(hoverId);
-//            callImage.setAttribute('title',csv_artworkName[hoverId-1021]);
-            console.log(callImage);
-            $("img[title]").tooltip( {
-      position: {
-        my: "center bottom-20",
-        at: "center top",
-        using: function( position, feedback ) {
-          $( this ).css( position );
-          $( "<div>" )
-            .addClass( "arrow" )
-            .addClass( feedback.vertical )
-            .addClass( feedback.horizontal )
-            .appendTo( this );
-        }
-      }
-    }
-            );
+
+        $("img[title]").tooltip( {
+                position: {
+                    my: "center bottom-20",
+                    at: "center top",
+                    using: function( position, feedback ) {
+                        $( this ).css( position );
+                        $( "<div>" )
+                        .addClass( "arrow" )
+                        .addClass( feedback.vertical )
+                        .addClass( feedback.horizontal )
+                        .appendTo( this );
+                    }
+                  }
+            });
         });
 
 
@@ -141,14 +143,13 @@ $(document).keydown(function(e){
         //open and close detail window
          $(td).click(function(event) {             
 //             add layer
-//             var callImage = document.createElement('img');
+
              $("#layer").fadeIn(300);
              $("#detail").css("display", "block");
              
              t_id=event.target.id;
             callImage.setAttribute('src','img/futurism/' + t_id + '.jpg');
              $('#detail_img').html(callImage);
-//             detail_img.append(callImage);
                 
              //add caption
              $('#name').html( '<span>' + csv_artworkName[t_id-1021]+'</span>');

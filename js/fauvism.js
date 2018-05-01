@@ -22,14 +22,8 @@ var i=0;
 
 $(document).ready(function() {
 //    
-$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
-    $(".girl").css("-webkit-animation-iteration-count", "infinite");
-//    $(".girl-wrap").addClass("paused");
-//    $(".girl").css("-webkit-animation-iteration-count", "0");
-    $(".girl").animate({
-                left:"+=120px"  
-            },1000);
+    
     
     if(e.keyCode==39 && i == 4) {
 //        import img
@@ -66,6 +60,10 @@ $(document).keydown(function(e){
         row3.append(newImage4);
     
         i=i+2;
+        
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }
     
     else if (e.keyCode==39 && i < urls2.length){
@@ -97,7 +95,12 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
-        $(".girl-wrap").removeClass("paused");
+        
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }
     
     else if (e.keyCode==39 && i == 7) {
@@ -108,7 +111,14 @@ $(document).keydown(function(e){
         newImage1.setAttribute('title',csv_artworkName[urls1[i]-361]);
         row1.append(newImage1);
         i++;
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }
+    else if (e.keyCode==39 && i == 8) {
+        window.open("cubism.html","_self");
+    }
+    
     
     var hoverId;
     var td;
@@ -120,28 +130,23 @@ $(document).keydown(function(e){
         td = document.getElementById(400+t);
         
         //hover tooltip
-        
-        
         $(td).mouseover(function(event) {
             hoverId=event.target.id;
 //           console.log(hoverId);
-//            callImage.setAttribute('title',csv_artworkName[hoverId-361]);
-            console.log(callImage);
             $("img[title]").tooltip( {
-      position: {
-        my: "center bottom-20",
-        at: "center top",
-        using: function( position, feedback ) {
-          $( this ).css( position );
-          $( "<div>" )
-            .addClass( "arrow" )
-            .addClass( feedback.vertical )
-            .addClass( feedback.horizontal )
-            .appendTo( this );
-        }
-      }
-    }
-            );
+              position: {
+                my: "center bottom-20",
+                at: "center top",
+                using: function( position, feedback ) {
+                  $( this ).css( position );
+                  $( "<div>" )
+                    .addClass( "arrow" )
+                    .addClass( feedback.vertical )
+                    .addClass( feedback.horizontal )
+                    .appendTo( this );
+                }
+              }
+            });
         });
 
 
@@ -149,14 +154,12 @@ $(document).keydown(function(e){
         //open and close detail window
          $(td).click(function(event) {             
 //             add layer
-//             var callImage = document.createElement('img');
              $("#layer").fadeIn(300);
              $("#detail").css("display", "block");
              
              t_id=event.target.id;
             callImage.setAttribute('src','img/fauvism/' + t_id + '.jpg');
              $('#detail_img').html(callImage);
-//             detail_img.append(callImage);
                 
              //add caption
              $('#name').html( '<span>' + csv_artworkName[t_id-361]+'</span>');

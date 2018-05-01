@@ -1,12 +1,10 @@
 
-    read_csv();
+read_csv();
 
 
 var row1 = document.querySelector('.row1');
 var row2 = document.querySelector('.row2');
 var row3 = document.querySelector('.row3');
-
-
 
 var urls1 = ["901", "904", "907", "907", "912", "915", "918"];
 var urls2 = ["902", "905", "908", "910", "913", "916", "919"];
@@ -18,16 +16,7 @@ var i=0;
 //the first and second row has to show two images at the same time when keydown once so consider urls1[3] and urls2[3]
 
 $(document).ready(function() {
-//    
-
-$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
-    $(".girl").css("-webkit-animation-iteration-count", "infinite");
-//    $(".girl-wrap").addClass("paused");
-//    $(".girl").css("-webkit-animation-iteration-count", "0");
-    $(".girl").animate({
-                left:"+=120px"  
-            },1000);
     
     if(e.keyCode==39 && i == 2) {
 //        import img
@@ -42,8 +31,6 @@ $(document).keydown(function(e){
         newImage1.setAttribute('id',urls1[i]);
         newImage1.setAttribute('title',csv_artworkName[urls1[i]-741]);
 
-
-    
         newImage2.setAttribute('src', 'img/surrealism/' + urls2[i] + '.jpg');
         newImage2.setAttribute('id',urls2[i]);
         newImage2.setAttribute('title',csv_artworkName[urls2[i]-741]);
@@ -73,6 +60,10 @@ $(document).keydown(function(e){
         row3.append(newImage3);
     
         i=i+2;
+        
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
     }
     
     else if (e.keyCode==39 && i < urls1.length){
@@ -90,8 +81,6 @@ $(document).keydown(function(e){
         newImage2.setAttribute('id',urls2[i]);
         newImage2.setAttribute('title',csv_artworkName[urls2[i]-741]);
         console.log(newImage2);
-
-
         
         newImage3.setAttribute('src', 'img/surrealism/' + urls3[i] + '.jpg');
         newImage3.setAttribute('id',urls3[i]);
@@ -104,8 +93,15 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
-        $(".girl-wrap").removeClass("paused");
-    }     
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+        
+        $(".girl").animate({
+                left:"+=120px"  
+            },1000);
+    }  
+    else if (e.keyCode==39 && i == urls1.length) {
+        window.open("size.html","_self");
+    }
     
     var hoverId;
     var td;
@@ -118,42 +114,36 @@ $(document).keydown(function(e){
         
         //hover tooltip
         
-        
         $(td).mouseover(function(event) {
             hoverId=event.target.id;
 //           console.log(hoverId);
-//            callImage.setAttribute('title',csv_artworkName[hoverId-741]);
+
             console.log(callImage);
             $("img[title]").tooltip( {
-      position: {
-        my: "center bottom-20",
-        at: "center top",
-        using: function( position, feedback ) {
-          $( this ).css( position );
-          $( "<div>" )
-            .addClass( "arrow" )
-            .addClass( feedback.vertical )
-            .addClass( feedback.horizontal )
-            .appendTo( this );
-        }
-      }
-    }
-            );
+              position: {
+                my: "center bottom-20",
+                at: "center top",
+                using: function( position, feedback ) {
+                  $( this ).css( position );
+                  $( "<div>" )
+                    .addClass( "arrow" )
+                    .addClass( feedback.vertical )
+                    .addClass( feedback.horizontal )
+                    .appendTo( this );
+                }
+              }
+            });
         });
-
-
         
         //open and close detail window
          $(td).click(function(event) {             
 //             add layer
-//             var callImage = document.createElement('img');
              $("#layer").fadeIn(300);
              $("#detail").css("display", "block");
              
              t_id=event.target.id;
             callImage.setAttribute('src','img/surrealism/' + t_id + '.jpg');
              $('#detail_img').html(callImage);
-//             detail_img.append(callImage);
                 
              //add caption
              $('#name').html( '<span>' + csv_artworkName[t_id-741]+'</span>');

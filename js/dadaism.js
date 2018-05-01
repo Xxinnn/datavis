@@ -18,15 +18,7 @@ var i=0;
 
 $(document).ready(function() {
 //    
-
-$(".girl-wrap").addClass("paused");
 $(document).keydown(function(e){
-    $(".girl").css("-webkit-animation-iteration-count", "infinite");
-//    $(".girl-wrap").addClass("paused");
-//    $(".girl").css("-webkit-animation-iteration-count", "0");
-    $(".girl").animate({
-                left:"+=110px"  
-            },1000);
     
     if(e.keyCode==39 && i == 6) {
 //        import img
@@ -50,7 +42,11 @@ $(document).keydown(function(e){
         row1.append(newImage1);
         row2.append(newImage2);
     
-        i=i+2;
+        i=i+1;
+
+        $(".girl").animate({
+                left:"+=100px"  
+            },1000);
     }
     
     else if (e.keyCode==39 && i < urls3.length){
@@ -79,8 +75,16 @@ $(document).keydown(function(e){
         row3.append(newImage3);
         
         i++;
-        $(".girl-wrap").removeClass("paused");
-    }     
+        
+        $(".girl").css("-webkit-animation-iteration-count", "infinite");
+
+        $(".girl").animate({
+                left:"+=100px"  
+            },1000);
+    }    
+    else if (e.keyCode==39 && i == urls3.length){
+        window.open("constructivism.html","_self");
+    }
     
     var hoverId;
     var td;
@@ -97,38 +101,33 @@ $(document).keydown(function(e){
         $(td).mouseover(function(event) {
             hoverId=event.target.id;
 //           console.log(hoverId);
-//            callImage.setAttribute('title',csv_artworkName[hoverId-281]);
             console.log(callImage);
             $("img[title]").tooltip( {
-      position: {
-        my: "center bottom-20",
-        at: "center top",
-        using: function( position, feedback ) {
-          $( this ).css( position );
-          $( "<div>" )
-            .addClass( "arrow" )
-            .addClass( feedback.vertical )
-            .addClass( feedback.horizontal )
-            .appendTo( this );
-        }
-      }
-    }
-            );
+              position: {
+                my: "center bottom-20",
+                at: "center top",
+                using: function( position, feedback ) {
+                  $( this ).css( position );
+                  $( "<div>" )
+                    .addClass( "arrow" )
+                    .addClass( feedback.vertical )
+                    .addClass( feedback.horizontal )
+                    .appendTo( this );
+                }
+              }
+            });
         });
-
-
+        
         
         //open and close detail window
          $(td).click(function(event) {             
 //             add layer
-//             var callImage = document.createElement('img');
              $("#layer").fadeIn(300);
              $("#detail").css("display", "block");
              
              t_id=event.target.id;
             callImage.setAttribute('src','img/dadaism/' + t_id + '.jpg');
              $('#detail_img').html(callImage);
-//             detail_img.append(callImage);
                 
              //add caption
              $('#name').html( '<span>' + csv_artworkName[t_id-581]+'</span>');
