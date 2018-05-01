@@ -23,7 +23,6 @@
 }
 .button:hover {
   cursor: pointer;
-  color: #f2f2f2;
 }
 .button:after {
   content: "";
