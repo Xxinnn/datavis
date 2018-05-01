@@ -141,7 +141,7 @@ p {
 /************************************************/
 .movement {
     grid-column: 3 / 12;
-    margin-right: 10%;
+    /* margin-right: 10%;
     grid-row: 5 / 16;
     text-align: center
 
